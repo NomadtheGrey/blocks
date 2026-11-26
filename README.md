@@ -19,11 +19,17 @@ Unity 4.x era, by the project's own evidence: UnityScript (`.js`) files —
 discontinued in 2018 — Visual Studio 2008-format solution files, and no
 `ProjectVersion.txt`, which this era of Unity didn't write.
 
-## What it appears to be
+## What it is
 
-A building-blocks test: `MakeBlocks.cs`, a `Block` folder of pieces, one
-scene (`testing.unity`), and Unity's Standard Assets. A small, honest
-experiment in making and placing blocks.
+A spawn-everything stress test in a single script. `MakeBlocks.cs`
+launches 100 coroutines, and each one instantiates 100 blocks — a
+100×100 field, 10,000 blocks in total — while a shared counter tracks
+which layer the field has reached. One scene (`testing.unity`), one
+block prefab, Unity's Standard Assets, and a question: how much can
+you instantiate before it hurts, and does spreading the work across
+coroutines help? The code is as-is, warts included — there's a stray
+character in the file that a modern compiler would refuse, which is
+part of its scratchpad charm.
 
 170 files, ~27 MB.
 
